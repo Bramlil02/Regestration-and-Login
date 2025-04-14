@@ -6,57 +6,109 @@ package regestration.and.login;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 public class Login {
-       private String name;
-    private String surname;
-    private int age;
-    private String Cellphonenumber;
-    private String password;
-    private String username;
+       private String Name;
+    private String Surname;
+    private String CellphoneNumber;
+    private String Password;
+    private String Username;
 
-    public Login(String name, String surname, String Cellphonenumber, int age, String password, String username) {
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-        this.Cellphonenumber = Cellphonenumber;
-        this.password = password;
-        this.username = username;
-        
-      
+    public String getName() {
+        return Name;
     }
-   public boolean checkUsername(String Username){
-       if (Username.contains("_") && Username.length()<=5){
-           
-        return true;
-        
-       }else{
-           return false;
-       }
-       
-       
-      
-   }
-   
-    public boolean checkPasswordComplexcity(String Password){
-           if (Password.contains ("\"^(?=.*[A-Z])(?=.*[a-z])(?=.*\\\\d)(?=.*[@$!%*?&])[A-Za-z\\\\d@$!%*?&]{8,20}$\";")){
-               
-               return true;
-           
-          }else{
-               return false;
-           }
-        
-        
-}
 
-public boolean checkCellphonenumber(String Cellphonenumber){
+    public void setName(String Name) {
+        this.Name = Name;
+    }
+
+    public String getSurname() {
+        return Surname;
+    }
+
+    public void setSurname(String Surname) {
+        this.Surname = Surname;
+    }
+
+
+    public String getCellphoneNumber() {
+        return CellphoneNumber;
+    }
+
+    public void setCellphoneNumber(String CellphoneNumber) {
+        this.CellphoneNumber = CellphoneNumber;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String Password) {
+        this.Password = Password;
+    }
+
+    public String getUsername() {
+        return Username;
+    }
+
+    public void setUsername(String Username) {
+        this.Username = Username;
+
+
+    }
+
+   public boolean checkUsername(String Username){
+      
+       
+      return Username.contains("_") && Username.length()<=5;
+   
+   
+   
+   }
+
+    
+    public boolean checkCellphonenumber(String Cellphonenumber){
     
     if (Cellphonenumber.contains("\"^\\\\+27\\\\d{9}$\";")){
         return true;
     }else{
         return false;// phoneNumber  && phoneNumber.matches(regex);
-
+    
+     
+      
     }
-}
-}
+    }
+
+   public  boolean checkPasswordcomplexcity(String Password) {
+        
+    return Password.contains("\"^(?=.*[A-Z])(?=.*\\\\d)(?=.*[@#$%^&+=!]).{8, }$\";"); 
+     
+   }
+}   
+ 
+
+
+                
+
+
+      
+ 
+
+
+                
+
+
+      
+ 
+
+
+                
+
+
+      
+ 
+
+
+                
+
+
+

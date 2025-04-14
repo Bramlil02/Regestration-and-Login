@@ -8,40 +8,87 @@ import java.util.Scanner;
 
 /**
  *
- * @author RC_Student_lab
+ * St10491369
  */
 public class RegestrationAndLogin {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
        
         Scanner po = new Scanner(System.in);
-       Login ob;
+       Login ob = new Login();
+        
+       
        
        //Regestration
-       System.out.print("Enter Name");
-       String Name = po.nextLine();
-       
-       System.out.print("Enter Surname");
-       String Surname = po.nextLine();
-       
-       System.out.print("Enter Username");
-       String Username = po.nextLine();
-       
-       System.out.print("Enter Age");
-       int Age = po.nextInt();
-       
-       System.out.print("Enter CellphoneNumber");
-       String CellphoneNumber = po.nextLine();
-       
-       System.out.print("Enter Password");
-       String Password = po.nextLine();
-       
-       ob = new Login (Name, Surname, Username, Age, CellphoneNumber, Password);
       
        
-    }
+       System.out.println("=======Resgestration========");
+       
+       
+       
+       System.out.print("Enter Name :");
+       String Name = po.nextLine();
+       
+       System.out.print("Enter Surname :");
+       String Surname = po.nextLine();
+       
+       System.out.print("Enter Username :");
+       String Username = po.nextLine();
+        
+        System.out.print("Enter Password :");
+       String password = po.nextLine();
+             
+       System.out.print("Enter CellphoneNumber :");
+     String CellphoneNumber = po.nextLine();
+     
+     
+           
+   
+         if (ob.checkUsername(Username)){
+           System.out.println("Username successfully captured");
+       }else{
+           System.out.println("Username not correctly formatted please ensure that your username contains an underscore and is no more than five characters in length");
+        
+       
+           if(ob.checkPasswordcomplexcity(password)){
+              System.out.print("Password successfully captured");
+              } else {
+                  System.out.print("Password is not correctly formatted, please ensure that the password contains eight characters,a capital letter, a number, and a special character");
+            
+           
+           
+           
+     if (ob.checkCellphonenumber(CellphoneNumber)){
+               System.out.print("Cellphonenumber succesfully added");
+         } else {
+               System.out.print("Cellphonenumber incorrectly formatted or does not contain international code");
+            
+     
+        
+         
+               
     
+    }
+     }
+         }
+    }
 }
+
+          
+    
+
+
+  
+           
+         
+           
+           
+       
+               
+       
+
+
+    
+
+

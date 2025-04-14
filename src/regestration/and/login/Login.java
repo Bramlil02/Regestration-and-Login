@@ -54,14 +54,8 @@ public class Login {
         this.Username = Username;
 
 
-    }
+    
 
-   public boolean checkUsername(String Username){
-      
-       
-      return Username.contains("_") && Username.length()<=5;
-   
-   
    
    }
 
@@ -77,18 +71,37 @@ public class Login {
       
     }
     }
-
+ 
    public  boolean checkPasswordcomplexcity(String Password) {
         
     return Password.contains("\"^(?=.*[A-Z])(?=.*\\\\d)(?=.*[@#$%^&+=!]).{8, }$\";"); 
-     
+   
    }
-}   
- 
+  public boolean checkUsername(String Username){
+      
+       
+      return Username.contains("_") && Username.length()<=5;
+   
 
 
-                
-
+                              
+  }
+  public boolean loginUser(String Username, String Password) {
+           Object correctUsername = null;
+      
+      return Username.equals(correctUsername) && Password.equals(Password);
+    
+}
+public String returnLoginStatus(String Username, String Password) {
+    if(loginUser(Username, Password)) {
+        
+        return "Welcome" + Name + Surname + "it is great to see you again.";
+        
+    }else{ 
+        return "Username or Password incorrect, please try agian";
+    }
+}
+}
 
       
  

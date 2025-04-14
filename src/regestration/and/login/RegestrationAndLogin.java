@@ -35,45 +35,61 @@ public class RegestrationAndLogin {
        
        System.out.print("Enter Username :");
        String Username = po.nextLine();
+      
         
         System.out.print("Enter Password :");
        String password = po.nextLine();
+       
+           
              
        System.out.print("Enter CellphoneNumber :");
      String CellphoneNumber = po.nextLine();
      
      
-           
-   
-         if (ob.checkUsername(Username)){
-           System.out.println("Username successfully captured");
-       }else{
-           System.out.println("Username not correctly formatted please ensure that your username contains an underscore and is no more than five characters in length");
-        
-       
-           if(ob.checkPasswordcomplexcity(password)){
-              System.out.print("Password successfully captured");
-              } else {
-                  System.out.print("Password is not correctly formatted, please ensure that the password contains eight characters,a capital letter, a number, and a special character");
-            
-           
-           
-           
-     if (ob.checkCellphonenumber(CellphoneNumber)){
+      if (ob.checkCellphonenumber(CellphoneNumber)){
                System.out.print("Cellphonenumber succesfully added");
          } else {
                System.out.print("Cellphonenumber incorrectly formatted or does not contain international code");
+               po.nextLine();
             
-     
+                if(ob.checkPasswordcomplexcity(password)){
+              System.out.print("Password successfully captured");
+              } else {
+                  System.out.print("Password is not correctly formatted, please ensure that the password contains eight characters,a capital letter, a number, and a special character");
+            po.nextLine();
+
+                 if (ob.checkUsername(Username)){
+           System.out.println("Username successfully captured");
+       }else{
+           System.out.println("Username not correctly formatted please ensure that your username contains an underscore and is no more than five characters in length");
+        po.nextLine();
+      
+           
+      }
+                 
+                 }
+                }
+      }
+       }
         
-         
-               
     
-    }
-     }
-         }
-    }
-}
+
+
+        
+     
+     
+    
+           
+         
+    
+
+
+
+  
+     
+         
+   
+
 
           
     
